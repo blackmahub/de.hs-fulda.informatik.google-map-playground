@@ -67,6 +67,7 @@ fastlane/screenshots
 fastlane/test_output
 
 .DS_Store
-GoogleMapNavigationApp/.DS_Store
-**/._*
+*/.DS_Store
+*/._.*
+*/._*
 */**/._*
