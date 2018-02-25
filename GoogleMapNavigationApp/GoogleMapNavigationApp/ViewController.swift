@@ -11,35 +11,83 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 import GooglePlacePicker
+import SystemConfiguration.CaptiveNetwork
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
-    let universityCampusArea = CLLocationCoordinate2D(latitude: 50.5665016, longitude: 9.6855674)
+    let universityCampusArea = CLLocationCoordinate2D(latitude: 50.5650077, longitude: 9.6853589)
+    let centerLocationGeb46E = CLLocationCoordinate2D(latitude: 50.5650899, longitude: 9.6855439)
+    let floor1Geb46E = UIImage(named: "E1.png")
+    
+    @IBOutlet weak var mapNavigationItem: UINavigationItem!
+    @IBOutlet weak var mahbubView: UIView!
+    
+    
     
     var googleDirection: GoogleDirection? = nil
     
     override func loadView() {
-        
-        let cameraPostion = GMSCameraPosition.camera(withLatitude: universityCampusArea.latitude, longitude: universityCampusArea.longitude, zoom: 18)
+    
+        let cameraPostion = GMSCameraPosition.camera(withLatitude: universityCampusArea.latitude, longitude: universityCampusArea.longitude, zoom: 20) // 18
         let mapView = GMSMapView.map(withFrame: .zero, camera: cameraPostion)
 
         mapView.isMyLocationEnabled = true
         
+        let groundOverlay = GMSGroundOverlay(position: centerLocationGeb46E, icon: floor1Geb46E, zoomLevel: CGFloat(19.7))
+        groundOverlay.bearing = 30
+        groundOverlay.map = mapView
+        
+//        let tileUrlConstructor: GMSTileURLConstructor = { x, y, zoom in
+//
+//            return Bundle.main.url(forResource: "E1", withExtension: "png")
+//        }
+        
+//        let layer = GMSURLTileLayer(urlConstructor: tileUrlConstructor)
+//        layer.map = mapView
+        
+//        let floors = ["Floor: 0", "Floor: 1", "Floor: 3"]
+//        let floorSwitcher = UISegmentedControl(items: floors)
+//        floorSwitcher.selectedSegmentIndex = 1
+//        floorSwitcher.autoresizingMask = .flexibleWidth
+//        floorSwitcher.frame = CGRect(x: 0, y: 0, width: 300, height: 200)
+//        floorSwitcher.addTarget(self, action: #selector(ViewController.drawFloorPlanOnMap(_:)), for: .valueChanged)
         
         self.view = mapView
+        //print("Navigation Item from loadView: \(self.navigationItem)")
+        //print("Navigation Item Title View from loadView: \(self.navigationItem.titleView)")
+//        self.navigationItem.titleView = floorSwitcher
+        
+        let origin = CLLocationCoordinate2D(latitude: 50.5551995, longitude: 9.6793356) // my current location
+        let destination = CLLocationCoordinate2D(latitude: 50.5639708, longitude: 9.6852563)
+        self.getDirectionFromGoogleMapAPI(origin: origin, destination: destination)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.activityType = CLActivityType.otherNavigation
-        locationManager.distanceFilter = 100
-        locationManager.startUpdatingLocation()
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+//        locationManager.activityType = CLActivityType.otherNavigation
+//        locationManager.distanceFilter = 100
+//        locationManager.startUpdatingLocation()
+        
+//        print("Wifi SSID: \(self.getWiFiSsid())")
+        
+//        print("Navigation Item from viewDidLoad: \(self.navigationItem)")
+//        print("Navigation Item Title View from viewDidLoad: \(self.navigationItem.titleView)")
+        
+        print("self.mapNavigationItem: \(self.mapNavigationItem)")
+//        self.mapNavigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
+//        self.view.bringSubview(toFront: self.mapNavigationItem.titleView!)
+        
+//        self.view.bringSubview(toFront: testButton)
+        
+//        let cameraPostion = GMSCameraPosition.camera(withLatitude: universityCampusArea.latitude, longitude: universityCampusArea.longitude, zoom: 20) // 18
+//        let mapView = GMSMapView.map(withFrame: .zero, camera: cameraPostion)
+//        self.mahbubView = mapView
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,12 +153,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     path.add(CLLocationCoordinate2D(latitude: step.end_location.lat, longitude: step.end_location.lng))
                 }
                 
+                // inside university path
+                path.add(CLLocationCoordinate2D(latitude: 50.5649110, longitude: 9.6860784))
+                path.add(CLLocationCoordinate2D(latitude: 50.5649485, longitude: 9.6859888))
+                
                 let polyline = GMSPolyline(path: path)
                 polyline.strokeWidth = 5
                 polyline.strokeColor = UIColor.purple
                 polyline.map = self.view as! GMSMapView
             }
         }.resume()
+    }
+    
+    func getWiFiSsid() -> String? {
+        var ssid: String?
+        print("Hello Mahbub: \(CNCopySupportedInterfaces())")
+        if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+            for interface in interfaces {
+                if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                    print("\(interfaceInfo)")
+                    //                    ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                    //                    break
+                }
+            }
+        }
+        return ssid
+    }
+    
+    @IBAction func drawFloorPlanOnMap(_ sender: UISegmentedControl) {
+        
+        print("Current Floor: \(sender.titleForSegment(at: sender.selectedSegmentIndex))")
     }
     
 }

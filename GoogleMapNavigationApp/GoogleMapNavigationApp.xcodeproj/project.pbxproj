@@ -32,9 +32,11 @@
 		93133076203714640086FA20 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93133075203714640086FA20 /* libc++.tbd */; };
 		93133078203714730086FA20 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93133077203714730086FA20 /* libz.tbd */; };
 		9313307A2037149B0086FA20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931330792037149A0086FA20 /* SystemConfiguration.framework */; };
-		937F3BCF203EF66800DC85FB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 937F3BCE203EF66800DC85FB /* GoogleMaps.bundle */; };
-		937F3BD1203EF69500DC85FB /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 937F3BD0203EF69500DC85FB /* GooglePlaces.bundle */; };
-		937F3BD3203EF6A400DC85FB /* GooglePlacePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 937F3BD2203EF6A400DC85FB /* GooglePlacePicker.bundle */; };
+		D34B43AB2043056900F36151 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D34B43AA2043056800F36151 /* Logo.png */; };
+		D3527C95203FAB8C00C387E5 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3527C94203FAB8C00C387E5 /* GooglePlaces.bundle */; };
+		D3527C97203FABAD00C387E5 /* GooglePlacePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3527C96203FABAC00C387E5 /* GooglePlacePicker.bundle */; };
+		D3527C99203FABC300C387E5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3527C98203FABC300C387E5 /* GoogleMaps.bundle */; };
+		D3527C9B20404D6900C387E5 /* E1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3527C9A20404D6900C387E5 /* E1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +67,11 @@
 		93133075203714640086FA20 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		93133077203714730086FA20 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		931330792037149A0086FA20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		937F3BCE203EF66800DC85FB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../../../../../../../Users/fdai5547/Downloads/GoogleMaps-2.6.0/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
-		937F3BD0203EF69500DC85FB /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "../../../../../../../../Users/fdai5547/Downloads/GooglePlaces-2.6.0/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
-		937F3BD2203EF6A400DC85FB /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = "../../../../../../../../Users/fdai5547/Downloads/GooglePlacePicker-2.6.0/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle"; sourceTree = "<group>"; };
+		D34B43AA2043056800F36151 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		D3527C94203FAB8C00C387E5 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "../../../../Downloads/GooglePlaces-2.6.0/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
+		D3527C96203FABAC00C387E5 /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = "../../../../Downloads/GooglePlacePicker-2.6.0/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle"; sourceTree = "<group>"; };
+		D3527C98203FABC300C387E5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../../../Downloads/GoogleMaps-2.6.0/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		D3527C9A20404D6900C387E5 /* E1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +110,9 @@
 			children = (
 				9313303920370CAB0086FA20 /* GoogleMapNavigationApp */,
 				9313303820370CAB0086FA20 /* Products */,
-				937F3BD2203EF6A400DC85FB /* GooglePlacePicker.bundle */,
-				937F3BD0203EF69500DC85FB /* GooglePlaces.bundle */,
-				937F3BCE203EF66800DC85FB /* GoogleMaps.bundle */,
+				D3527C98203FABC300C387E5 /* GoogleMaps.bundle */,
+				D3527C96203FABAC00C387E5 /* GooglePlacePicker.bundle */,
+				D3527C94203FAB8C00C387E5 /* GooglePlaces.bundle */,
 				93133054203711210086FA20 /* GooglePlaces.framework */,
 				93133052203710EE0086FA20 /* GooglePlacePicker.framework */,
 				93133050203710D50086FA20 /* GoogleMapsCore.framework */,
@@ -132,6 +136,8 @@
 				9313303A20370CAB0086FA20 /* AppDelegate.swift */,
 				9313303C20370CAB0086FA20 /* ViewController.swift */,
 				9313303E20370CAB0086FA20 /* Main.storyboard */,
+				D3527C9A20404D6900C387E5 /* E1.png */,
+				D34B43AA2043056800F36151 /* Logo.png */,
 				9313304120370CAB0086FA20 /* Assets.xcassets */,
 				9313304320370CAB0086FA20 /* LaunchScreen.storyboard */,
 				9313304620370CAB0086FA20 /* Info.plist */,
@@ -220,12 +226,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				937F3BD3203EF6A400DC85FB /* GooglePlacePicker.bundle in Resources */,
+				D3527C95203FAB8C00C387E5 /* GooglePlaces.bundle in Resources */,
+				D34B43AB2043056900F36151 /* Logo.png in Resources */,
 				9313304520370CAB0086FA20 /* LaunchScreen.storyboard in Resources */,
 				9313304220370CAB0086FA20 /* Assets.xcassets in Resources */,
+				D3527C99203FABC300C387E5 /* GoogleMaps.bundle in Resources */,
+				D3527C97203FABAD00C387E5 /* GooglePlacePicker.bundle in Resources */,
 				9313304020370CAB0086FA20 /* Main.storyboard in Resources */,
-				937F3BCF203EF66800DC85FB /* GoogleMaps.bundle in Resources */,
-				937F3BD1203EF69500DC85FB /* GooglePlaces.bundle in Resources */,
+				D3527C9B20404D6900C387E5 /* E1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
